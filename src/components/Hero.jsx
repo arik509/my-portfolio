@@ -7,8 +7,8 @@ import { Link } from 'react-scroll';
 const Hero = () => {
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/arik509', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/in/yourprofile', label: 'LinkedIn' },
-    { icon: FaFacebook, href: 'https://facebook.com/yourprofile', label: 'Facebook' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sabirhossainarik/', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/sabirhossain.arik', label: 'Facebook' },
   ];
 
   return (
