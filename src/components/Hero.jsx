@@ -18,8 +18,8 @@ const Hero = () => {
     >
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl animate-pulse" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -35,7 +35,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-primary font-medium mb-4"
+              className="text-indigo-400 font-medium mb-4"
             >
               👋 Hello, I'm
             </motion.p>
@@ -88,7 +88,7 @@ const Hero = () => {
               <a
                 href="/resume.pdf"
                 download
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:-translate-y-1"
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full font-semibold hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-1"
               >
                 <FaDownload />
                 Download Resume
@@ -97,7 +97,7 @@ const Hero = () => {
                 to="contact"
                 smooth={true}
                 duration={500}
-                className="px-6 py-3 border border-primary/50 rounded-full font-semibold hover:bg-primary/10 transition-all duration-300 cursor-pointer hover:-translate-y-1"
+                className="px-6 py-3 border border-indigo-500/50 rounded-full font-semibold hover:bg-indigo-500/10 transition-all duration-300 cursor-pointer hover:-translate-y-1"
               >
                 Contact Me
               </Link>
@@ -116,7 +116,7 @@ const Hero = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-all duration-300 hover:-translate-y-1"
+                  className="p-3 bg-white/5 rounded-full hover:bg-indigo-500/20 hover:text-indigo-400 transition-all duration-300 hover:-translate-y-1"
                   aria-label={social.label}
                 >
                   <social.icon size={24} />
@@ -133,7 +133,7 @@ const Hero = () => {
             className="flex-1 flex justify-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-pink-500 rounded-full blur-2xl opacity-50 animate-pulse" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 via-violet-500 to-pink-500 rounded-full blur-2xl opacity-50 animate-pulse" />
               <img
                 src="/profile.jpg"
                 alt="Sabir Hossain Arik"
