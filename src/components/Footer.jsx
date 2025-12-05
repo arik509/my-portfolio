@@ -15,8 +15,8 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/arik509', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/in/yourprofile', label: 'LinkedIn' },
-    { icon: FaFacebook, href: 'https://facebook.com/yourprofile', label: 'Facebook' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sabirhossainarik/', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/sabirhossain.arik', label: 'Facebook' },
   ];
 
   return (
@@ -79,11 +79,11 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-400">
               <li>
                 <span className="text-primary">Email:</span>{' '}
-                sabirhossainarik@gmail.com
+                sabirhossainarik34@gmail.com
               </li>
               <li>
                 <span className="text-primary">Phone:</span>{' '}
-                +880 1XXXXXXXXX
+                +880 1307453275
               </li>
               <li>
                 <span className="text-primary">Location:</span>{' '}

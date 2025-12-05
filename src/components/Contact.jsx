@@ -18,22 +18,22 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: 'Email',
-      value: 'sabirhossainarik@gmail.com',
-      href: 'mailto:sabirhossainarik@gmail.com',
+      value: 'sabirhossainarik34@gmail.com',
+      href: 'mailto:sabirhossainarik34@gmail.com',
       color: 'text-red-400',
     },
     {
       icon: FaPhone,
       label: 'Phone',
-      value: '+880 1XXXXXXXXX',
-      href: 'tel:+8801XXXXXXXXX',
+      value: '+880 1307453275',
+      href: 'tel:+8801307453275',
       color: 'text-green-400',
     },
     {
       icon: FaWhatsapp,
       label: 'WhatsApp',
-      value: '+880 1XXXXXXXXX',
-      href: 'https://wa.me/8801XXXXXXXXX',
+      value: '+880 1307453275',
+      href: 'https://wa.me/8801307453275',
       color: 'text-emerald-400',
     },
     {
@@ -47,8 +47,8 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/arik509', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/in/yourprofile', label: 'LinkedIn' },
-    { icon: FaFacebook, href: 'https://facebook.com/yourprofile', label: 'Facebook' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sabirhossainarik/', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/sabirhossain.arik', label: 'Facebook' },
   ];
 
   const handleChange = (e) => {
@@ -119,7 +119,7 @@ const Contact = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="glass-card p-4 flex items-center gap-4 hover:bg-white/10 transition-all duration-300"
+                  className="glass-card p-4 text-[14px] flex items-center gap-4 hover:bg-white/10 transition-all duration-300"
                 >
                   <div className={`p-3 rounded-full bg-white/5 ${info.color}`}>
                     <info.icon size={24} />
