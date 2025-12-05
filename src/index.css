@@ -1,32 +1,38 @@
+@import "tailwindcss";
+
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Custom CSS Variables */
+:root {
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-dark: #0f172a;
+  --color-darker: #020617;
+}
 
+/* Base Styles */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-darker text-gray-100;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-darker);
+  color: #f3f4f6;
 }
 
-@layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary via-secondary to-pink-500 bg-clip-text text-transparent;
-  }
-  
-  .gradient-border {
-    @apply relative;
-  }
-  
-  .gradient-border::before {
-    content: '';
-    @apply absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-pink-500 rounded-xl opacity-75 blur;
-  }
-  
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
-  }
+/* Custom Utility Classes */
+.gradient-text {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary), #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
 }
