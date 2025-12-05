@@ -28,48 +28,52 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Hero.io',
-      image: '/projects/hero-io.jpg',
-      shortDesc: 'A responsive React web app to explore, search, and manage apps.',
-      fullDesc: 'Hero.io is a modern web application that allows users to explore and manage applications. Built with React and styled with Tailwind CSS, it provides a seamless experience for discovering and organizing apps with an intuitive interface.',
-      techStack: ['React', 'Tailwind CSS', 'React Router', 'React Toastify', 'LocalStorage'],
-      liveLink: 'https://hero-io.vercel.app/',
-      githubLink: 'https://github.com/arik509/Hero.io',
+      title: 'CourseHub',
+      image: '/projects/coursehub.jpg',
+      shortDesc: 'A modern online course platform built with Next.js and server-side rendering.',
+      fullDesc: 'CourseHub is a feature-rich online learning platform where users can browse, enroll, and access courses. Built with Next.js for optimal performance and SEO, it features server-side rendering, dynamic routing, and a beautiful responsive UI. The platform includes course categories, search functionality, and user authentication.',
+      techStack: ['Next.js', 'React', 'Tailwind CSS', 'DaisyUI', 'NextAuth', 'MongoDB', 'Vercel'],
+      liveLink: 'https://coursehub-ninu.vercel.app/',
+      githubLink: 'https://github.com/arik509/coursehub',
       challenges: [
-        'Creating an efficient search and filter system',
-        'Managing application state across multiple components',
-        'Implementing persistent data storage with LocalStorage'
+        'Implementing server-side rendering for better SEO and performance',
+        'Setting up NextAuth for secure user authentication',
+        'Creating dynamic course pages with Next.js App Router',
+        'Optimizing images and assets for fast loading'
       ],
       futureImprovements: [
-        'Add user authentication for personalized experience',
-        'Integrate backend API for dynamic data',
-        'Add dark/light theme toggle'
+        'Add video streaming for course content',
+        'Implement progress tracking for enrolled courses',
+        'Add instructor dashboard for course management',
+        'Enable course reviews and ratings system'
       ],
     },
     {
       id: 3,
-      title: 'World On The Go',
-      image: '/projects/world-on-the-go.jpg',
-      shortDesc: 'A travel and tourism website with country exploration features.',
-      fullDesc: 'World On The Go is a travel-focused web application that helps users explore different countries, discover tourist attractions, and plan their trips. The app provides detailed information about various destinations with a beautiful, responsive interface.',
-      techStack: ['React', 'Vite', 'Tailwind CSS', 'REST API', 'React Router'],
-      liveLink: 'https://world-on-the-go.vercel.app/',
-      githubLink: 'https://github.com/arik509/react-world-on-the-go',
+      title: 'Toy-Topia',
+      image: '/projects/toy-topia.jpg',
+      shortDesc: 'A full-stack toy marketplace for buying and selling toys online.',
+      fullDesc: 'Toy-Topia is a feature-rich online toy marketplace where users can browse, buy, and sell toys. The platform includes user authentication, product management, shopping cart functionality, and a beautiful responsive design. Sellers can add their toys with images and descriptions, while buyers can explore categories and make purchases.',
+      techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Firebase Auth', 'Tailwind CSS', 'DaisyUI'],
+      liveLink: 'https://toy-topia-f3ea6.web.app/',
+      githubLink: 'https://github.com/arik509/Toy-Topia',
       challenges: [
-        'Fetching and displaying data from external APIs',
-        'Creating responsive card layouts for country information',
-        'Implementing smooth navigation between pages'
+        'Building a complete CRUD system for toy listings',
+        'Implementing secure user authentication and authorization',
+        'Creating category-based filtering and search functionality',
+        'Managing seller-specific product dashboards'
       ],
       futureImprovements: [
-        'Add favorite destinations feature',
-        'Implement trip planning functionality',
-        'Add weather information for each country'
+        'Add payment gateway integration (Stripe/SSLCommerz)',
+        'Implement wishlist and favorites feature',
+        'Add product reviews and ratings system',
+        'Enable real-time chat between buyers and sellers'
       ],
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-dark/50">
+    <section id="projects" className="py-20 bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -82,7 +86,7 @@ const Projects = () => {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             My <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 mx-auto rounded-full" />
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
@@ -107,15 +111,15 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
                 
                 {/* Overlay Links */}
-                <div className="absolute inset-0 bg-primary/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-indigo-500/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-white rounded-full text-primary hover:scale-110 transition-transform"
+                    className="p-3 bg-white rounded-full text-indigo-500 hover:scale-110 transition-transform"
                     aria-label="Live Demo"
                   >
                     <FaExternalLinkAlt size={20} />
@@ -124,7 +128,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-white rounded-full text-primary hover:scale-110 transition-transform"
+                    className="p-3 bg-white rounded-full text-indigo-500 hover:scale-110 transition-transform"
                     aria-label="GitHub Repo"
                   >
                     <FaGithub size={20} />
@@ -134,7 +138,7 @@ const Projects = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-400 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 text-sm mb-4 line-clamp-2">
@@ -146,13 +150,13 @@ const Projects = () => {
                   {project.techStack.slice(0, 4).map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full"
+                      className="px-2 py-1 text-xs bg-indigo-500/10 text-indigo-400 rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.techStack.length > 4 && (
-                    <span className="px-2 py-1 text-xs bg-secondary/10 text-secondary rounded-full">
+                    <span className="px-2 py-1 text-xs bg-violet-500/10 text-violet-400 rounded-full">
                       +{project.techStack.length - 4} more
                     </span>
                   )}
@@ -161,7 +165,7 @@ const Projects = () => {
                 {/* View Details Button */}
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="w-full py-2 border border-primary/50 rounded-lg text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                  className="w-full py-2 border border-indigo-500/50 rounded-lg text-indigo-400 font-medium hover:bg-indigo-500 hover:text-white transition-all duration-300"
                 >
                   View Details
                 </button>
@@ -196,7 +200,7 @@ const Projects = () => {
                   alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
@@ -210,7 +214,7 @@ const Projects = () => {
                       href={selectedProject.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-primary rounded-lg font-medium hover:bg-primary/80 transition-colors"
+                      className="flex items-center gap-2 px-4 py-2 bg-indigo-500 rounded-lg font-medium hover:bg-indigo-600 transition-colors"
                     >
                       <FaExternalLinkAlt size={14} />
                       Live Demo
@@ -243,7 +247,7 @@ const Projects = () => {
                     {selectedProject.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                        className="px-3 py-1.5 bg-indigo-500/10 text-indigo-400 rounded-full text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -257,7 +261,7 @@ const Projects = () => {
                   <ul className="space-y-2">
                     {selectedProject.challenges.map((challenge, index) => (
                       <li key={index} className="flex items-start gap-2 text-gray-300">
-                        <span className="text-primary mt-1">▹</span>
+                        <span className="text-indigo-400 mt-1">▹</span>
                         {challenge}
                       </li>
                     ))}
@@ -270,7 +274,7 @@ const Projects = () => {
                   <ul className="space-y-2">
                     {selectedProject.futureImprovements.map((improvement, index) => (
                       <li key={index} className="flex items-start gap-2 text-gray-300">
-                        <span className="text-secondary mt-1">▹</span>
+                        <span className="text-violet-400 mt-1">▹</span>
                         {improvement}
                       </li>
                     ))}
