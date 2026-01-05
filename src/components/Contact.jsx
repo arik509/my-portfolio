@@ -1,18 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useForm } from '@formspree/react';
 import { 
   FaEnvelope, FaPhone, FaWhatsapp, FaMapMarkerAlt, 
   FaPaperPlane, FaGithub, FaLinkedin, FaFacebook 
 } from 'react-icons/fa';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("mnjnwryb"); // Your Formspree form ID
 
   const contactInfo = [
     {
@@ -50,23 +45,6 @@ const Contact = () => {
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sabirhossainarik/', label: 'LinkedIn' },
     { icon: FaFacebook, href: 'https://www.facebook.com/sabirhossain.arik', label: 'Facebook' },
   ];
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission (replace with actual API call)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-    alert('Message sent successfully!');
-  };
 
   return (
     <section id="contact" className="py-20">
@@ -170,10 +148,9 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                    disabled={state.submitting}
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
                     placeholder="John Doe"
                   />
                 </div>
@@ -185,10 +162,9 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                    disabled={state.submitting}
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -202,10 +178,9 @@ const Contact = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                  disabled={state.submitting}
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -217,24 +192,48 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
+                  disabled={state.submitting}
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors resize-none disabled:opacity-50"
                   placeholder="Your message here..."
                 />
               </div>
 
+              {/* Success Message */}
+              {state.succeeded && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 rounded-lg bg-green-500/20 text-green-400 border border-green-500/30"
+                >
+                  ✅ Thanks for reaching out! I'll get back to you soon.
+                </motion.div>
+              )}
+
+              {/* Error Message */}
+              {state.errors && state.errors.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 rounded-lg bg-red-500/20 text-red-400 border border-red-500/30"
+                >
+                  ❌ Oops! There was a problem submitting your form.
+                </motion.div>
+              )}
+
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={state.submitting}
+                whileHover={{ scale: state.submitting ? 1 : 1.02 }}
+                whileTap={{ scale: state.submitting ? 1 : 0.98 }}
                 className="w-full py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? (
-                  <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                {state.submitting ? (
+                  <>
+                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <span>Sending...</span>
+                  </>
                 ) : (
                   <>
                     <FaPaperPlane />
